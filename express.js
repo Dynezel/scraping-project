@@ -1,6 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 
+const port = process.env.PORT || 3000;
+
+
 const path = require('path');
 const app = express();
 
@@ -12,6 +15,6 @@ app.get('/api/partidos', (req, res) => {
   res.sendFile(path.join(__dirname, 'partidos.json'));
 });
 
-app.listen(3000, () => {
-  console.log('Servidor corriendo en el puerto 3000');
+app.listen(port, () => {
+  console.log(`Servidor corriendo en el puerto ${port}`);
 });
